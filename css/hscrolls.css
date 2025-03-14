@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "Against";
+  src: url("../public/fonts/against_2/against_regular.otf") format("opentype");
+}
+
+
+
+.hscroll{
+  height: 450vh;
+}
+
+.sticky_parent{
+  height: 450vh;
+}
+
+.sticky_section {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.scroll_section {
+  position: absolute;
+  top: 100px;
+  height: 100%;
+  width: 240vw;
+  left: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50vw;
+  transition: transform 0.6s cubic-bezier(0.15, 0.89, 0.42, 0.95);
+}
+
+.text_section {
+  position: absolute;
+  right: 10vw;
+  width: 42%;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  top: 14.5%;
+  height: 82vh;
+  display: grid;
+  grid-template: 2fr 10fr / 1fr;
+  row-gap: 3rem;
+}
+
+.visible{
+  opacity: 1;
+}
+
+.text_section h2 {
+  font-size: 4rem;
+  font-family: "Against";
+  overflow: hidden;
+  position: relative;
+  font-style: normal; 
+}
+
+.text-para {
+  text-align: justify;
+  font-size: 1.5rem;
+  font-family: "Faculty Glyphic", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* slide up images on hover */
+.img{
+  height: 80%;
+  object-fit: cover;
+  object-position: 0px;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.img.hovered{
+  transform: translateY(-15px);
+}
+
+.img.dimmed{
+  opacity: 0.6;
+}
+
+@keyframes displayBG {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-bg {
+  animation: displayBG 0.3s ease forwards;
+}
+.bg-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: -1;
+}
+
+.textcolor{
+  color: #FCF6EA;
+}
+
+@keyframes slideUp{
+  from{
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slideUpText{
+  animation: slideUp 0.3s ease-out 0s forwards;
+}
